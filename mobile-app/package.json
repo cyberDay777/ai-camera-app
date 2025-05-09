@@ -1,0 +1,10 @@
+{
+  "name": "mobile-app",
+  "main": "node_modules/expo/AppEntry.js",
+  "dependencies": {
+    "expo": "~50.0.0",
+    "expo-image-picker": "~15.0.0",
+    "expo-file-system": "~15.5.0",
+    "react-native": "0.73.0"
+  }
+}
