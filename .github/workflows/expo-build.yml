@@ -1,4 +1,4 @@
-name: Build Expo App
+name: Build AI Camera APK
 
 on:
   push:
@@ -15,14 +15,15 @@ jobs:
       with:
         node-version: 18
 
-    - name: Install Dependencies
+    - name: Install Expo CLI and EAS
       run: |
+        npm install -g expo-cli eas-cli
         cd mobile-app
         npm install
 
-    - name: Expo Publish
+    - name: Build APK with EAS
       env:
         EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
       run: |
         cd mobile-app
-        npx expo export --dev
+        eas build --platform android --profile production --non-interactive
